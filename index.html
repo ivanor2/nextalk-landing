@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexTalk — Децентрализованный мессенджер с E2E-шифрованием</title>
+  <meta name="description" content="NexTalk — защищённый веб-мессенджер со сквозным шифрованием (E2EE) и децентрализованной сетью независимых узлов передачи сообщений.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">💬</div>
+      <span>Nex<em>Talk</em></span>
+    </a>
+
+    <button class="nav-burger" id="navBurger" aria-label="Меню">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#features" class="nav-link">Возможности</a>
+      <a href="#how" class="nav-link">Архитектура</a>
+      <a href="#crypto-lab" class="nav-link">Лаборатория E2E</a>
+      <a href="#comparison" class="nav-link">Сравнение</a>
+      <a href="nodes.html" class="nav-link">Каталог узлов</a>
+      <a href="install.html" class="nav-link">Установка узла</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="rules.html" class="nav-link">Правила</a>
+      <button class="theme-toggle" id="themeToggle" title="Переключить тему">🌙</button>
+      <a href="../login.php" class="btn btn-ghost" style="margin-left: 6px;">Войти</a>
+      <a href="../register.php" class="btn btn-primary">Регистрация</a>
+    </div>
+  </nav>
+
+  <div class="nav-spacer"></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-badge">
+      🔒 End-to-end шифрование · Открытый протокол · Без номеров телефонов
+    </div>
+    <h1>
+      Мессенджер, где<br>
+      <span class="gradient-text">никто не читает</span><br>
+      ваши сообщения
+    </h1>
+    <p class="hero-desc">
+      Авторизация через защищённый центр, а сами сообщения передаются через независимые узлы федеративной сети. Разверните свой собственный сервер или подключитесь к публичному.
+    </p>
+    <div class="hero-actions">
+      <a href="../register.php" class="btn btn-primary btn-lg">
+        Начать бесплатно →
+      </a>
+      <a href="install.html" class="btn btn-ghost btn-lg">
+        🚀 Установить свой узел
+      </a>
+      <a href="nodes.html" class="btn btn-ghost btn-lg">
+        🌐 Каталог узлов
+      </a>
+    </div>
+
+    <!-- INTERACTIVE PRODUCT MOCKUP -->
+    <div class="hero-mockup-container">
+      <div class="hero-mockup-glow"></div>
+      <div class="mockup-window" id="heroMockup">
+        
+        <!-- Window Titlebar -->
+        <div class="mockup-titlebar">
+          <div class="mockup-dots">
+            <span class="mockup-dot red"></span>
+            <span class="mockup-dot yellow"></span>
+            <span class="mockup-dot green"></span>
+            <span class="mockup-window-title">💬 NexTalk Web · E2EE Secure Session</span>
+          </div>
+
+          <!-- View Switcher -->
+          <div class="mockup-view-toggle">
+            <button class="mockup-toggle-btn active" id="btnViewClient" title="Как видит переписку человек">
+              🔒 Вид клиента (E2EE)
+            </button>
+            <button class="mockup-toggle-btn" id="btnViewNode" title="Как видит передачу узел сети">
+              👁️ Вид узла (Шифротекст)
+            </button>
+          </div>
+        </div>
+
+        <!-- Alert banner when in Node View -->
+        <div class="mockup-banner-alert">
+          🛡️ <strong>Режим узла передачи:</strong> Сервер видит исключительно криптографический шифротекст, IV и тег подлинности. Исходный текст сообщений недоступен операторам узлов.
+        </div>
+
+        <!-- Window Body -->
+        <div class="mockup-body">
+          
+          <!-- Mockup Sidebar -->
+          <div class="mockup-sidebar">
+            <div class="mockup-sidebar-header">Активные диалоги</div>
+            
+            <div class="mockup-chat-item active">
+              <div class="mockup-avatar">
+                АВ
+                <span class="status-dot"></span>
+              </div>
+              <div class="mockup-chat-info">
+                <div class="mockup-chat-name">Алиса Воронова</div>
+                <div class="mockup-chat-preview">🔐 Ключи E2EE согласованы</div>
+              </div>
+            </div>
+
+            <div class="mockup-chat-item">
+              <div class="mockup-avatar" style="background: linear-gradient(135deg, #10B981, #059669);">
+                МР
+                <span class="status-dot"></span>
+              </div>
+              <div class="mockup-chat-info">
+                <div class="mockup-chat-name">Марк (Узел Node-1)</div>
+                <div class="mockup-chat-preview">Узел онлайн на порту 3001</div>
+              </div>
+            </div>
+
+            <div class="mockup-chat-item">
+              <div class="mockup-avatar" style="background: linear-gradient(135deg, #F59E0B, #D97706);">
+                #
+              </div>
+              <div class="mockup-chat-info">
+                <div class="mockup-chat-name">Федерация #dev</div>
+                <div class="mockup-chat-preview">38 участников онлайн</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mockup Main Chat -->
+          <div class="mockup-chat-main">
+            
+            <div class="mockup-chat-header">
+              <div class="mockup-chat-contact-info">
+                <div class="mockup-avatar" style="width: 32px; height: 32px; font-size: 12px;">
+                  АВ
+                  <span class="status-dot"></span>
+                </div>
+                <div>
+                  <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Алиса Воронова</div>
+                  <div style="font-size: 11px; color: var(--success);">● в сети · печатает...</div>
+                </div>
+              </div>
+              <div class="mockup-sec-badge">
+                <span>🔐</span>
+                <span>Web Crypto AES-GCM + RSA-4096</span>
+              </div>
+            </div>
+
+            <!-- Messages List -->
+            <div class="mockup-messages">
+              <div class="mockup-system-bubble">
+                🔒 Сообщения защищены сквозным E2E-шифрованием. Приватные ключи хранятся только в IndexedDB вашего браузера.
+              </div>
+
+              <!-- Message 1: Incoming -->
+              <div class="mockup-msg incoming">
+                <div class="mockup-bubble">
+                  <div class="mockup-text-normal">
+                    Привет! Ты уже подключился через наш независимый федеративный узел?
+                  </div>
+                  <div class="mockup-raw-box">
+                    {<br>
+                    &nbsp;&nbsp;"iv": "8f1a2c90e3d4",<br>
+                    &nbsp;&nbsp;"payload": "U2FsdGVkX187A9q4vX...8FmN2==", <br>
+                    &nbsp;&nbsp;"auth_tag": "e4a1b023f98c"<br>
+                    }
+                  </div>
+                  <div class="mockup-msg-meta">15:20 · E2EE ✓</div>
+                </div>
+              </div>
+
+              <!-- Message 2: Outgoing -->
+              <div class="mockup-msg outgoing">
+                <div class="mockup-bubble">
+                  <div class="mockup-text-normal">
+                    Да, поднял свой узел на VPS за пару минут! Пинг всего 14 мс, и хостинг не имеет доступа к переписке 👍
+                  </div>
+                  <div class="mockup-raw-box">
+                    {<br>
+                    &nbsp;&nbsp;"iv": "3d9e0b1f7c8a",<br>
+                    &nbsp;&nbsp;"payload": "mQ7zP1o+wNx9RkLm2Yv8AaBb3==", <br>
+                    &nbsp;&nbsp;"auth_tag": "a8c2d140e67b"<br>
+                    }
+                  </div>
+                  <div class="mockup-msg-meta">15:21 · Доставлено ✓✓</div>
+                </div>
+              </div>
+
+              <!-- Message 3: Incoming -->
+              <div class="mockup-msg incoming">
+                <div class="mockup-bubble">
+                  <div class="mockup-text-normal">
+                    Супер! Никакой привязки к корпоративным серверам и номерам телефонов 🎉
+                  </div>
+                  <div class="mockup-raw-box">
+                    {<br>
+                    &nbsp;&nbsp;"iv": "5c2d8e0a1b9f",<br>
+                    &nbsp;&nbsp;"payload": "kL8wX2o+zNm1QkPr3Tz9BbCc4==", <br>
+                    &nbsp;&nbsp;"auth_tag": "b9d3e251f89a"<br>
+                    }
+                  </div>
+                  <div class="mockup-msg-meta">15:22 · E2EE ✓</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fake input bar -->
+            <div class="mockup-input-bar">
+              <div class="mockup-fake-input">
+                🔒 Зашифрованное сообщение для Алисы...
+              </div>
+              <div class="mockup-send-btn">➤</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- STATS COUNTERS BAR -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-num gradient-text">100%</div>
+        <div class="stat-label">Сквозное E2E-шифрование</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" style="color: var(--success);">0</div>
+        <div class="stat-label">Хранимых логов и трекеров</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" style="color: var(--accent-light);">4096-bit</div>
+        <div class="stat-label">RSA & 256-bit AES-GCM ключи</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" style="color: var(--info);">&lt; 20 ms</div>
+        <div class="stat-label">Задержка сокет-доставки</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PUBLIC NODES PREVIEW -->
+  <section class="section" id="nodes-preview">
+    <div class="section-label">Сетевая инфраструктура</div>
+    <h2 class="section-title">Публичные узлы передачи</h2>
+    <p class="section-desc">
+      Вы можете подключиться к любому действующему узлу сети или сменить его в настройках мессенджера в любой момент.
+    </p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Узел</th>
+            <th>Адрес передачи</th>
+            <th>Пользователи</th>
+            <th>Пинг</th>
+            <th>Статус</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="node-row" data-search="node-one основной wss://nextalk-dev.loca.lt" data-status="active">
+            <td>
+              <div class="node-name-title">node-one (Основной узел)</div>
+              <div class="node-key-mono">RSA_PUB_KEY_DEMO_01...</div>
+            </td>
+            <td><code class="code-tag">wss://nextalk-dev.loca.lt</code></td>
+            <td><strong>142</strong> <span style="font-size:12px;color:var(--text-muted)">польз.</span></td>
+            <td><span class="ping-badge" data-url="https://nextalk-dev.loca.lt">online</span></td>
+            <td><span class="badge-status badge-active">● Онлайн</span></td>
+          </tr>
+          <tr class="node-row" data-search="local-node локальный ws://127.0.0.1:3001" data-status="active">
+            <td>
+              <div class="node-name-title">local-node (Локальный сервер)</div>
+              <div class="node-key-mono">RSA_PUB_KEY_DEMO_02...</div>
+            </td>
+            <td><code class="code-tag">ws://127.0.0.1:3001</code></td>
+            <td><strong>18</strong> <span style="font-size:12px;color:var(--text-muted)">польз.</span></td>
+            <td><span class="ping-badge" data-url="http://127.0.0.1:3001">online</span></td>
+            <td><span class="badge-status badge-active">● Онлайн</span></td>
+          </tr>
+          <tr class="node-row" data-search="campus-hub университет wss://campus.nextalk.net" data-status="pending">
+            <td>
+              <div class="node-name-title">campus-hub (Университетский)</div>
+              <div class="node-key-mono">RSA_PUB_KEY_DEMO_03...</div>
+            </td>
+            <td><code class="code-tag">wss://campus.nextalk.net</code></td>
+            <td><strong>35</strong> <span style="font-size:12px;color:var(--text-muted)">польз.</span></td>
+            <td><span class="ping-badge" data-url="https://campus.nextalk.net">тест</span></td>
+            <td><span class="badge-status badge-pending">○ На проверке</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="text-align: center; margin-top: 24px;">
+      <a href="nodes.html" class="btn btn-ghost">
+        Смотреть все доступные узлы каталога →
+      </a>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="section-label">Возможности</div>
+    <h2 class="section-title">Всё для абсолютной приватности</h2>
+    <p class="section-desc">
+      Инновационная архитектура сочетает удобство современного веб-мессенджера и безопасность распределённых сетей.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔐</div>
+        <h3>E2E-шифрование</h3>
+        <p>Сообщения шифруются прямо на вашем устройстве с помощью стандартов Web Crypto API. Ни серверы, ни операторы узлов не могут расшифровать содержимое.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <h3>Децентрализованные узлы</h3>
+        <p>Сообщения передаются через независимые серверы-ноды. Любой участник может поднять свой узел — сбой одного узла не нарушает работу всей сети.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Мгновенный WebSocket</h3>
+        <p>Доставка в реальном времени через постоянные сокет-сессии. Онлайн-статусы, индикатор набора текста и мгновенные уведомления о сообщениях.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🗝️</div>
+        <h3>Ключи только у вас</h3>
+        <p>Приватные криптографические ключи генерируются локально в браузере и безопасно сохраняются в IndexedDB устройства. Мы физически не имеем к ним доступа.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Работает на любом устройстве</h3>
+        <p>Чистый веб-клиент без установки тяжёлых приложений. Адаптивный интерфейс одинаково удобен на смартфонах, планшетах и компьютерах.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📨</div>
+        <h3>Офлайн-доставка</h3>
+        <p>Если собеседник временно не в сети, узел сохраняет зашифрованный контейнер и безопасно доставляет его в момент появления адресата онлайн.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how">
+    <div class="section-label">Архитектура</div>
+    <h2 class="section-title">Как передаются ваши сообщения</h2>
+    <p class="section-desc">
+      Простой трёхступенчатый процесс гарантирует полную криптографическую защиту каждого байта информации.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Регистрация и генерация ключей</h3>
+          <p>При регистрации браузер генерирует уникальную пару криптографических ключей. Публичный ключ отправляется на сервер для адресации, а секретный закрытый ключ остаётся только на вашем устройстве.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Выбор федеративного узла передачи</h3>
+          <p>Вы подключаетесь к любому проверенному узлу из каталога либо указываете собственный сервер. Узел валидирует ваш сеанс офлайн без необходимости раскрывать ваши данные.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Сквозное шифрование и доставка</h3>
+          <p>Перед отправкой в сеть сообщение запечатывается публичным ключом собеседника. Узел передачи видит только анонимный зашифрованный блок и пересылает его получателю.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE CRYPTO PLAYGROUND SIMULATOR -->
+  <section class="section" id="crypto-lab">
+    <div class="section-label">Интерактивная демонстрация</div>
+    <h2 class="section-title">Криптографическая лаборатория</h2>
+    <p class="section-desc">
+      Попробуйте сквозное шифрование прямо сейчас. Введите любой текст и посмотрите, как браузер шифрует его перед отправкой в сеть.
+    </p>
+
+    <div class="crypto-playground-card">
+      <div class="crypto-input-wrap">
+        <label for="cryptoInput" style="font-size: 13px; font-weight: 600; color: var(--text-primary);">
+          Введите тестовое сообщение для проверки:
+        </label>
+        <div class="crypto-input-bar">
+          <input
+            type="text"
+            id="cryptoInput"
+            value="Привет! Это секретное сообщение для демонстрации E2EE шифрования."
+            placeholder="Напишите любую фразу..."
+          >
+        </div>
+        <div class="crypto-presets">
+          <span>Быстрые примеры:</span>
+          <button type="button" class="crypto-preset-pill">Встречаемся в 18:00 у метро</button>
+          <button type="button" class="crypto-preset-pill">Пароль от сервера: &amp;k9#xP!2026</button>
+          <button type="button" class="crypto-preset-pill">Договор подписан обеими сторонами</button>
+        </div>
+      </div>
+
+      <div class="crypto-stages-grid">
+        
+        <!-- Stage 1 -->
+        <div class="crypto-stage-box highlight">
+          <div class="stage-header">
+            <span>💻</span>
+            <span>Клиент А (Отправитель)</span>
+            <span class="stage-badge">Шифрование</span>
+          </div>
+          <pre class="stage-code-box" id="cryptoStage1">// Локальное шифрование...</pre>
+        </div>
+
+        <div class="crypto-arrow-connector">➔</div>
+
+        <!-- Stage 2 -->
+        <div class="crypto-stage-box stage-node">
+          <div class="stage-header">
+            <span>🌐</span>
+            <span>Узел передачи (WebSocket)</span>
+            <span class="stage-badge" style="background: rgba(74, 222, 128, 0.15); color: var(--success);">Zero-Knowledge</span>
+          </div>
+          <pre class="stage-code-box" id="cryptoStage2">// Передаваемый шифротекст...</pre>
+        </div>
+
+        <div class="crypto-arrow-connector">➔</div>
+
+        <!-- Stage 3 -->
+        <div class="crypto-stage-box highlight">
+          <div class="stage-header">
+            <span>📱</span>
+            <span>Клиент Б (Получатель)</span>
+            <span class="stage-badge" style="background: rgba(96, 165, 250, 0.15); color: var(--info);">Расшифровка</span>
+          </div>
+          <pre class="stage-code-box" id="cryptoStage3">// Результат у получателя...</pre>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="section" id="comparison">
+    <div class="section-label">Безопасность и независимость</div>
+    <h2 class="section-title">NexTalk против традиционных платформ</h2>
+    <p class="section-desc">
+      Почему открытая федеративная модель надёжнее централизованных корпоративных решений.
+    </p>
+
+    <div class="comparison-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width: 32%;">Критерий защиты</th>
+            <th class="col-nextalk" style="width: 20%;">💬 NexTalk</th>
+            <th style="width: 16%;">Telegram</th>
+            <th style="width: 16%;">Signal</th>
+            <th style="width: 16%;">WhatsApp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>E2E-шифрование по умолчанию для всех чатов</td>
+            <td class="col-nextalk"><span class="check-yes">✅ Всегда</span></td>
+            <td><span class="check-no">❌ Только Secret</span></td>
+            <td><span class="check-yes">✅ Всегда</span></td>
+            <td><span class="check-yes">✅ Да (закрытый код)</span></td>
+          </tr>
+          <tr>
+            <td>Независимые серверы (Свой узел передачи)</td>
+            <td class="col-nextalk"><span class="check-yes">✅ Да (Любой VPS/ПК)</span></td>
+            <td><span class="check-no">❌ Нет</span></td>
+            <td><span class="check-no">❌ Нет</span></td>
+            <td><span class="check-no">❌ Нет</span></td>
+          </tr>
+          <tr>
+            <td>Регистрация без номера телефона</td>
+            <td class="col-nextalk"><span class="check-yes">✅ Да (100% анонимно)</span></td>
+            <td><span class="check-no">❌ Требует номер</span></td>
+            <td><span class="check-no">❌ Требует номер</span></td>
+            <td><span class="check-no">❌ Требует номер</span></td>
+          </tr>
+          <tr>
+            <td>Открытый исходный код без трекеров</td>
+            <td class="col-nextalk"><span class="check-yes">✅ 0 трекеров</span></td>
+            <td><span class="check-partial">⚠️ Частично</span></td>
+            <td><span class="check-partial">⚠️ Клиент открыт</span></td>
+            <td><span class="check-no">❌ Полностью закрыт</span></td>
+          </tr>
+          <tr>
+            <td>Работа прямо в браузере без установки</td>
+            <td class="col-nextalk"><span class="check-yes">✅ Чистый веб-клиент</span></td>
+            <td><span class="check-yes">✅ Есть</span></td>
+            <td><span class="check-no">❌ Только приложение</span></td>
+            <td><span class="check-yes">✅ Web-версия</span></td>
+          </tr>
+          <tr>
+            <td>Защита от централизованной блокировки</td>
+            <td class="col-nextalk"><span class="check-yes">✅ Федеративная сеть</span></td>
+            <td><span class="check-no">❌ Единая точка отказа</span></td>
+            <td><span class="check-no">❌ Единая точка отказа</span></td>
+            <td><span class="check-no">❌ Единая точка отказа</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION -->
+  <section class="section" id="faq">
+    <div class="section-label">Часто задаваемые вопросы</div>
+    <h2 class="section-title">Вопросы и ответы о безопасности</h2>
+    <p class="section-desc">
+      Всё, что вам нужно знать о криптографии, узлах передачи и сохранности ваших данных.
+    </p>
+
+    <div class="faq-list">
+      
+      <div class="faq-item open">
+        <button class="faq-question">
+          <span>Как работает сквозное шифрование (E2EE) прямо в браузере?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          При регистрации браузер генерирует криптографическую пару ключей (публичный и закрытый) с помощью встроенного стандарта Web Crypto API. Секретный закрытый ключ сохраняется в локальной зашифрованной базе IndexedDB и никогда не покидает ваше устройство. Перед отправкой каждое сообщение шифруется публичным ключом адресата — расшифровать его может только устройство собеседника.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Может ли владелец узла передачи прочитать мои сообщения?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Нет. Узел передачи сообщений работает по принципу Zero-Knowledge (нулевого разглашения). Он получает только зашифрованный блок байтов (шифротекст) и метаданные доставки (кому доставить). Расшифровать этот блок без приватного ключа получателя математически невозможно даже при полном контроле над сервером узла.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Нужен ли номер телефона для регистрации?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Номер телефона не требуется. Регистрация происходит по уникальному логину, паролю и контактному e-mail (для возможности восстановления доступа). Мы принципиально не привязываем аккаунты к телефонным номерам или паспортным данным.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Что произойдёт, если узел, к которому я подключён, отключится?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Благодаря децентрализации сети вы можете в любой момент зайти в «Настройки» мессенджера или в каталог узлов и переключиться на любой другой активный узел сети всего в один клик. Ваша учётная запись, контакты и ключи шифрования останутся в полной сохранности.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Сложно ли поднять свой собственный узел передачи?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Очень просто! Серверная часть узла написана на легковесном Node.js и SQLite, не требует сложных баз данных или настроек. Достаточно выполнить команду `git clone` и `npm start`. Вы можете запустить его на дешёвом VPS за $2 в месяц или даже на домашнем ПК.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NODE BANNER -->
+  <div class="section">
+    <div class="node-banner" id="nodes-banner">
+      <div class="node-banner-text">
+        <h2>🚀 Запустите свой собственный узел</h2>
+        <p>
+          Станьте частью распределённой сети NexTalk! Запустить узел передачи можно на домашнем ПК, сервере или облачном VPS всего за 3 команды. Не требуется база данных MySQL — всё работает на ультрабыстром Node.js и встроенной SQLite.
+        </p>
+        <a href="install.html" class="btn btn-primary">
+          📖 Полная инструкция и форма заявки →
+        </a>
+      </div>
+
+      <div class="node-banner-code">
+        <div style="color: var(--text-muted); margin-bottom: 6px;"># Быстрый запуск узла:</div>
+        git clone https://github.com/ivanor2/nextalk-node.git<br>
+        cd nextalk-node &amp;&amp; npm install<br>
+        npm start<br>
+        <div style="color: var(--text-muted); margin-top: 8px; margin-bottom: 4px;"># Проверка работы:</div>
+        curl http://localhost:3001/health
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA CARD -->
+  <section class="section" style="padding-top: 20px;">
+    <div class="cta-card">
+      <h2>Готовы к приватным перепискам<br>без слежки и компромиссов?</h2>
+      <p>
+        Начните прямо сейчас в браузере. Без привязки номера телефона, без скрытых коммерческих трекеров.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="../register.php" class="btn btn-primary btn-lg">
+          Зарегистрироваться бесплатно →
+        </a>
+        <a href="install.html" class="btn btn-ghost btn-lg">
+          🚀 Развернуть свой узел
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="nav-logo">
+        <div class="logo-icon" style="width:30px;height:30px;font-size:15px;border-radius:8px">💬</div>
+        <span>Nex<em>Talk</em></span>
+      </div>
+      <p>© 2026 NexTalk. Децентрализованный веб-мессенджер с открытым протоколом.</p>
+      <div class="footer-links">
+        <a href="nodes.html">Каталог узлов</a>
+        <a href="install.html">Инструкция по установке</a>
+        <a href="rules.html">Правила и политика</a>
+        <a href="../login.php">Войти в мессенджер</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

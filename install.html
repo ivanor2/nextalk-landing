@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexTalk — Руководство по установке своего узла</title>
+  <meta name="description" content="Пошаговая инструкция по развёртыванию независимого узла передачи сообщений сети NexTalk и форма заявки на добавление в глобальный каталог.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">💬</div>
+      <span>Nex<em>Talk</em></span>
+    </a>
+
+    <button class="nav-burger" id="navBurger" aria-label="Меню">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#features" class="nav-link">Возможности</a>
+      <a href="index.html#how" class="nav-link">Как это работает</a>
+      <a href="nodes.html" class="nav-link">Каталог узлов</a>
+      <a href="install.html" class="nav-link nav-link-active">Установка узла</a>
+      <a href="rules.html" class="nav-link">Правила</a>
+      <button class="theme-toggle" id="themeToggle" title="Переключить тему">🌙</button>
+      <a href="../login.php" class="btn btn-ghost" style="margin-left: 6px;">Войти</a>
+      <a href="../register.php" class="btn btn-primary">Регистрация</a>
+    </div>
+  </nav>
+
+  <div class="nav-spacer"></div>
+
+  <!-- MAIN CONTENT -->
+  <main class="section" style="max-width: 960px;">
+    <div style="margin-bottom: 36px;">
+      <h1 class="section-title" style="text-align: left; margin-bottom: 8px;">🚀 Руководство по установке узла NexTalk</h1>
+      <p class="section-desc" style="text-align: left; margin-bottom: 0;">
+        Поднимите собственный независимый сервер передачи сообщений менее чем за 15 минут.
+      </p>
+    </div>
+
+    <!-- Requirements Overview -->
+    <div class="settings-card">
+      <h3 class="card-title">📋 Системные требования</h3>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">Среда выполнения</div>
+          <div class="info-value">Node.js 20+ (LTS)</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">База данных</div>
+          <div class="info-value">Встроенная SQLite</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Память и диск</div>
+          <div class="info-value">512 МБ ОЗУ · 5 ГБ SSD</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Сетевое соединение</div>
+          <div class="info-value">HTTPS / WSS (SSL)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Installation Steps -->
+    <div class="settings-card">
+      <h3 class="card-title" style="margin-bottom: 24px;">🛠️ Пошаговая инструкция по запуску</h3>
+
+      <div class="guide-step">
+        <div class="guide-step-num">1</div>
+        <div class="guide-step-body">
+          <h4>Скачайте исходный код узла</h4>
+          <p>Клонируйте официальный репозиторий или загрузите архив с исходным кодом узла:</p>
+          <div class="code-snippet">
+            <code>git clone https://github.com/ivanor2/nextalk-node.git node-server &amp;&amp; cd node-server</code>
+            <button class="copy-btn" onclick="copyCode(this)">Копировать</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">2</div>
+        <div class="guide-step-body">
+          <h4>Установите зависимости</h4>
+          <p>Узел использует легковесные библиотеки (ws, dotenv, sqlite3). Отдельный сервер MySQL не требуется:</p>
+          <div class="code-snippet">
+            <code>npm install</code>
+            <button class="copy-btn" onclick="copyCode(this)">Копировать</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">3</div>
+        <div class="guide-step-body">
+          <h4>Настройте файл конфигурации (.env)</h4>
+          <p>Создайте конфигурационный файл на основе примера и укажите публичный адрес:</p>
+          <div class="code-snippet">
+            <code>cp .env.example .env</code>
+            <button class="copy-btn" onclick="copyCode(this)">Копировать</button>
+          </div>
+          <div class="env-example-box">
+            PORT=3001<br>
+            NODE_NAME="Мой личный узел"<br>
+            AUTH_SERVER_URL=https://auth.nextalk.net<br>
+            PUBLIC_WS_URL=wss://my-node.example.org
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="guide-step-num">4</div>
+        <div class="guide-step-body">
+          <h4>Запустите узел</h4>
+          <p>Запустите сервер в фоновом режиме через менеджер процессов PM2 или системную службу systemd:</p>
+          <div class="code-snippet">
+            <code>pm2 start server.js --name nextalk-node &amp;&amp; pm2 save</code>
+            <button class="copy-btn" onclick="copyCode(this)">Копировать</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Application Form -->
+    <div class="settings-card" id="apply">
+      <h3 class="card-title">📝 Заявка на регистрацию узла в каталоге</h3>
+      <p class="card-desc" style="margin-bottom: 24px;">
+        После успешного запуска узла заполните форму, чтобы администратор сети проверил доступность и добавил ваш сервер в глобальный каталог пользователей.
+      </p>
+
+      <form id="registerNodeForm">
+        <div class="field">
+          <label for="node_url">Публичный сетевой адрес узла (HTTPS / WSS) *</label>
+          <input
+            type="text"
+            id="node_url"
+            name="url"
+            required
+            placeholder="https://node.example.org или wss://node.example.org"
+          >
+          <div class="field-hint">Сервер должен быть доступен по зашифрованному протоколу SSL (порт 443 / WSS)</div>
+        </div>
+
+        <div class="field">
+          <label for="node_name">Название узла *</label>
+          <input
+            type="text"
+            id="node_name"
+            name="name"
+            required
+            maxlength="64"
+            placeholder="Например: Helsinki Fast Relay Node"
+          >
+        </div>
+
+        <div class="field">
+          <label for="admin_email">Контактный E-mail администратора *</label>
+          <input
+            type="email"
+            id="admin_email"
+            name="email"
+            required
+            placeholder="admin@example.org"
+          >
+          <div class="field-hint">Для связи и экстренных уведомлений в случае потери связи с узлом</div>
+        </div>
+
+        <div class="field">
+          <label for="public_key">Публичный криптографический ключ узла *</label>
+          <textarea
+            id="public_key"
+            name="public_key"
+            required
+            rows="3"
+            placeholder="-----BEGIN PUBLIC KEY----- ... -----END PUBLIC KEY-----"
+            class="textarea-key-mono"
+          ></textarea>
+          <div class="field-hint">Ключ генерируется автоматически при первом запуске в директории <code>keys/public.pem</code></div>
+        </div>
+
+        <div class="field">
+          <label for="node_desc">Описание узла (необязательно)</label>
+          <input
+            type="text"
+            id="node_desc"
+            name="description"
+            maxlength="200"
+            placeholder="Географическое расположение, открытая или корпоративная нода"
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit" style="max-width: 340px;">
+          📨 Отправить заявку в реестр
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="nav-logo">
+        <div class="logo-icon" style="width:30px;height:30px;font-size:15px;border-radius:8px">💬</div>
+        <span>Nex<em>Talk</em></span>
+      </div>
+      <p>© 2026 NexTalk. Децентрализованный веб-мессенджер с открытым протоколом.</p>
+      <div class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="nodes.html">Каталог узлов</a>
+        <a href="rules.html">Правила и политика</a>
+        <a href="../login.php">Войти в мессенджер</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

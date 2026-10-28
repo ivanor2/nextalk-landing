@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexTalk — Каталог федеративных узлов сети</title>
+  <meta name="description" content="Реестр публичных и независимых узлов передачи сообщений децентрализованной сети NexTalk. Выберите узел или подключите свой.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">💬</div>
+      <span>Nex<em>Talk</em></span>
+    </a>
+
+    <button class="nav-burger" id="navBurger" aria-label="Меню">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#features" class="nav-link">Возможности</a>
+      <a href="index.html#how" class="nav-link">Как это работает</a>
+      <a href="nodes.html" class="nav-link nav-link-active">Каталог узлов</a>
+      <a href="install.html" class="nav-link">Установка узла</a>
+      <a href="rules.html" class="nav-link">Правила</a>
+      <button class="theme-toggle" id="themeToggle" title="Переключить тему">🌙</button>
+      <a href="../login.php" class="btn btn-ghost" style="margin-left: 6px;">Войти</a>
+      <a href="../register.php" class="btn btn-primary">Регистрация</a>
+    </div>
+  </nav>
+
+  <div class="nav-spacer"></div>
+
+  <!-- MAIN CONTENT -->
+  <main class="section">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; margin-bottom: 32px;">
+      <div>
+        <h1 class="section-title" style="text-align: left; margin-bottom: 8px;">🌐 Каталог узлов сети NexTalk</h1>
+        <p class="section-desc" style="text-align: left; margin-bottom: 0;">
+          Независимые серверы передачи сообщений, подключённые к единой децентрализованной федерации.
+        </p>
+      </div>
+      <div>
+        <a href="install.html" class="btn btn-primary">
+          🚀 Развернуть свой узел
+        </a>
+      </div>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="settings-card" style="padding: 16px 24px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div style="flex: 1; min-width: 260px;">
+          <input
+            type="text"
+            id="nodeSearchInput"
+            placeholder="🔍 Поиск по названию или сетевому адресу узла..."
+            class="input-search-node"
+          >
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 13px; color: var(--text-muted); font-weight: 500;">Статус:</span>
+          <select id="nodeStatusFilter" style="width: auto; padding: 10px 14px; background: var(--bg-surface); border: 1px solid var(--glass-border); border-radius: var(--radius-md); color: var(--text-primary);">
+            <option value="all">Все узлы</option>
+            <option value="active" selected>Активные (онлайн)</option>
+            <option value="pending">На проверке</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nodes Table -->
+    <div class="table-wrap">
+      <table class="data-table" id="nodesTable">
+        <thead>
+          <tr>
+            <th>Узел</th>
+            <th>Адрес передачи (WebSocket)</th>
+            <th>Статус</th>
+            <th>Пользователи</th>
+            <th>Пинг</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody id="nodesTbody">
+          <tr class="node-row" data-status="active" data-search="основной узел сети nextalk-dev.loca.lt wss://nextalk-dev.loca.lt">
+            <td>
+              <div class="node-name-title">Основной узел сети (Node-One)</div>
+              <div class="node-key-mono">RSA_PUB_KEY_DEMO_NODE_01...</div>
+            </td>
+            <td>
+              <code class="code-tag">wss://nextalk-dev.loca.lt</code>
+            </td>
+            <td>
+              <span class="badge-status badge-active">● Онлайн</span>
+            </td>
+            <td>
+              <span style="font-weight: 700;">142</span>
+              <span style="font-size: 12px; color: var(--text-muted);"> польз.</span>
+            </td>
+            <td>
+              <span class="ping-badge" data-url="https://nextalk-dev.loca.lt">...</span>
+            </td>
+            <td>
+              <button
+                class="btn btn-ghost btn-sm connect-node-btn"
+                data-ws="wss://nextalk-dev.loca.lt"
+                title="Подключиться к этому узлу"
+              >
+                Подключить
+              </button>
+            </td>
+          </tr>
+
+          <tr class="node-row" data-status="active" data-search="локальный узел localhost ws://127.0.0.1:3001">
+            <td>
+              <div class="node-name-title">Локальный узел (Localhost Dev)</div>
+              <div class="node-key-mono">RSA_PUB_KEY_DEMO_NODE_02...</div>
+            </td>
+            <td>
+              <code class="code-tag">ws://127.0.0.1:3001</code>
+            </td>
+            <td>
+              <span class="badge-status badge-active">● Онлайн</span>
+            </td>
+            <td>
+              <span style="font-weight: 700;">18</span>
+              <span style="font-size: 12px; color: var(--text-muted);"> польз.</span>
+            </td>
+            <td>
+              <span class="ping-badge" data-url="http://127.0.0.1:3001">...</span>
+            </td>
+            <td>
+              <button
+                class="btn btn-ghost btn-sm connect-node-btn"
+                data-ws="ws://127.0.0.1:3001"
+                title="Подключиться к этому узлу"
+              >
+                Подключить
+              </button>
+            </td>
+          </tr>
+
+          <tr class="node-row" data-status="pending" data-search="университетский кампус campus.nextalk.net wss://campus.nextalk.net">
+            <td>
+              <div class="node-name-title">Университетский кампус (Campus Hub)</div>
+              <div class="node-key-mono">RSA_PUB_KEY_DEMO_NODE_03...</div>
+            </td>
+            <td>
+              <code class="code-tag">wss://campus.nextalk.net</code>
+            </td>
+            <td>
+              <span class="badge-status badge-pending">○ На проверке</span>
+            </td>
+            <td>
+              <span style="font-weight: 700;">35</span>
+              <span style="font-size: 12px; color: var(--text-muted);"> польз.</span>
+            </td>
+            <td>
+              <span class="ping-badge" data-url="https://campus.nextalk.net">тест</span>
+            </td>
+            <td>
+              <button
+                class="btn btn-ghost btn-sm connect-node-btn"
+                data-ws="wss://campus.nextalk.net"
+                title="Подключиться к этому узлу"
+              >
+                Подключить
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Explanatory Callout Box -->
+    <div class="settings-card card-accent-info" style="margin-top: 36px;">
+      <h3 class="card-title" style="color: var(--accent-light);">💡 Как работают независимые узлы передачи</h3>
+      <p class="card-desc" style="color: var(--text-primary); margin-bottom: 14px;">
+        В отличие от централизованных систем (где все данные читаются одним сервером), в NexTalk обмен сообщениями децентрализован. Вы можете общаться с пользователями любых узлов федерации. Все сообщения между клиентами зашифрованы сквозным шифрованием (E2EE) с применением Web Crypto API, поэтому владельцы узлов видят исключительно непрозрачный шифротекст.
+      </p>
+      <a href="install.html" style="color: var(--accent-light); font-weight: 600; text-decoration: underline;">
+        Узнать подробнее и развернуть свой собственный узел менее чем за 15 минут →
+      </a>
+    </div>
+  </main>
+
+  <!-- Connect Node Modal -->
+  <div class="modal-overlay" id="connectModal">
+    <div class="modal">
+      <button class="modal-close" aria-label="Закрыть">✕</button>
+      <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">🌐 Подключение к узлу</h3>
+      <p class="card-desc" style="margin-bottom: 18px;">
+        Адрес узла сохранён в настройках браузера. Вы можете использовать его для прямого подключения в мессенджере:
+      </p>
+      <div class="field">
+        <label for="modalWsInput">Адрес WebSocket узла:</label>
+        <div style="display: flex; gap: 8px;">
+          <input type="text" id="modalWsInput" readonly style="font-family: monospace;">
+          <button class="btn btn-ghost btn-sm" onclick="copyWsUrl()">Копировать</button>
+        </div>
+      </div>
+      <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px;">
+        <button class="btn btn-ghost" onclick="document.getElementById('connectModal').classList.remove('open')">Закрыть</button>
+        <a href="../index.php" class="btn btn-primary">Перейти в мессенджер →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="nav-logo">
+        <div class="logo-icon" style="width:30px;height:30px;font-size:15px;border-radius:8px">💬</div>
+        <span>Nex<em>Talk</em></span>
+      </div>
+      <p>© 2026 NexTalk. Децентрализованный веб-мессенджер с открытым протоколом.</p>
+      <div class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="install.html">Инструкция по установке</a>
+        <a href="rules.html">Правила и политика</a>
+        <a href="../login.php">Войти в мессенджер</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
