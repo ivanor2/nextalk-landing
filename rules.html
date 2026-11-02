@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NexTalk — Правила и политика конфиденциальности</title>
   <meta name="description" content="Условия использования и политика конфиденциальности децентрализованного мессенджера NexTalk со сквозным шифрованием.">
+  <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,11 +13,11 @@
   <!-- NAV -->
   <nav class="nav" id="mainNav">
     <a href="index.html" class="nav-logo">
-      <div class="logo-icon">💬</div>
+      <div class="logo-icon"><i class="bi bi-chat-dots-fill" aria-hidden="true"></i></div>
       <span>Nex<em>Talk</em></span>
     </a>
 
-    <button class="nav-burger" id="navBurger" aria-label="Меню">☰</button>
+    <button class="nav-burger" id="navBurger" aria-label="Меню"><i class="bi bi-list" aria-hidden="true"></i></button>
 
     <div class="nav-links" id="navLinks">
       <a href="index.html#features" class="nav-link">Возможности</a>
@@ -24,7 +25,7 @@
       <a href="nodes.html" class="nav-link">Каталог узлов</a>
       <a href="install.html" class="nav-link">Установка узла</a>
       <a href="rules.html" class="nav-link nav-link-active">Правила</a>
-      <button class="theme-toggle" id="themeToggle" title="Переключить тему">🌙</button>
+      <button class="theme-toggle" id="themeToggle" title="Переключить тему"><i class="bi bi-moon-stars-fill" aria-hidden="true"></i></button>
       <a href="../login.php" class="btn btn-ghost" style="margin-left: 6px;">Войти</a>
       <a href="../register.php" class="btn btn-primary">Регистрация</a>
     </div>
@@ -35,7 +36,7 @@
   <!-- MAIN CONTENT -->
   <main class="section" style="max-width: 920px;">
     <div style="text-align: center; margin-bottom: 40px;">
-      <h1 class="section-title" style="margin-bottom: 12px;">📜 Правила и политика безопасности</h1>
+      <h1 class="section-title" style="margin-bottom: 12px;"><i class="bi bi-scroll" aria-hidden="true"></i> Правила и политика безопасности</h1>
       <p class="section-desc" style="margin-bottom: 0;">
         Принципы работы децентрализованной сети NexTalk, защита персональных данных и правила этичного взаимодействия.
       </p>
@@ -110,7 +111,7 @@
           Шифрование сообщений происходит локально на устройстве отправителя с использованием современного криптографического стандарта <strong>Web Crypto API</strong>.
         </p>
         <div class="e2e-info-box">
-          <div class="e2e-info-title">🔐 Как защищена ваша переписка:</div>
+          <div class="e2e-info-title"><i class="bi bi-shield-lock-fill" aria-hidden="true"></i> Как защищена ваша переписка:</div>
           <ol class="e2e-info-list">
             <li>Каждое сообщение шифруется публичным ключом адресата непосредственно перед отправкой.</li>
             <li>Узел передачи получает только непрозрачный ciphertext и криптографический вектор инициализации (nonce).</li>
@@ -141,7 +142,7 @@
   <footer>
     <div class="footer-inner">
       <div class="nav-logo">
-        <div class="logo-icon" style="width:30px;height:30px;font-size:15px;border-radius:8px">💬</div>
+        <div class="logo-icon" style="width:30px;height:30px;border-radius:8px"><i class="bi bi-chat-dots-fill" aria-hidden="true"></i></div>
         <span>Nex<em>Talk</em></span>
       </div>
       <p>© 2026 NexTalk. Децентрализованный веб-мессенджер с открытым протоколом.</p>
