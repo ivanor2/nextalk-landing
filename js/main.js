@@ -77,16 +77,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── 3. Navbar Shadow on Scroll ───────────────────────────
+  // ── 3. Navbar Shadow on Scroll (rAF-throttled, passive listener) ─
   const nav = document.getElementById('mainNav');
   if (nav) {
+    let navTicking = false;
+    const updateNav = () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+      navTicking = false;
+    };
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
+      if (!navTicking) {
+        navTicking = true;
+        requestAnimationFrame(updateNav);
       }
-    });
+    }, { passive: true });
+    updateNav();
   }
 
   // ── 4. Smooth Anchor Scrolling ───────────────────────────
@@ -125,27 +130,36 @@ document.addEventListener('DOMContentLoaded', () => {
   if (searchInput) searchInput.addEventListener('input', filterNodes);
   if (filterSelect) filterSelect.addEventListener('change', filterNodes);
 
-  // Ping nodes
-  document.querySelectorAll('.ping-badge').forEach(async el => {
-    const url = el.dataset.url;
-    if (!url || url.startsWith('ws')) {
-      el.textContent = 'online';
-      el.style.color = 'var(--success)';
-      return;
-    }
-    const start = Date.now();
-    try {
-      await fetch(url + '/health', { mode: 'no-cors' });
-      const latency = Date.now() - start;
-      el.textContent = latency + ' ms';
-      if (latency < 150) el.style.color = 'var(--success)';
-      else if (latency < 350) el.style.color = 'var(--warning)';
-      else el.style.color = 'var(--danger)';
-    } catch (e) {
-      el.textContent = 'онлайн';
-      el.style.color = 'var(--success)';
-    }
-  });
+  // Ping nodes — откладываем сетевые проверки на idle, чтобы они
+  // не конкурировали с загрузкой критичных ресурсов страницы
+  const pingNodes = () => {
+    document.querySelectorAll('.ping-badge').forEach(el => {
+      const url = el.dataset.url;
+      if (!url || url.startsWith('ws')) {
+        el.textContent = 'online';
+        el.style.color = 'var(--success)';
+        return;
+      }
+      const start = Date.now();
+      fetch(url + '/health', { mode: 'no-cors' })
+        .then(() => {
+          const latency = Date.now() - start;
+          el.textContent = latency + ' ms';
+          if (latency < 150) el.style.color = 'var(--success)';
+          else if (latency < 350) el.style.color = 'var(--warning)';
+          else el.style.color = 'var(--danger)';
+        })
+        .catch(() => {
+          el.textContent = 'онлайн';
+          el.style.color = 'var(--success)';
+        });
+    });
+  };
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(pingNodes, { timeout: 3000 });
+  } else {
+    setTimeout(pingNodes, 1500);
+  }
 
   // Connect node button
   document.querySelectorAll('.connect-node-btn').forEach(btn => {
