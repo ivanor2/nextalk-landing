@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NexTalk — Децентрализованный мессенджер с E2E-шифрованием</title>
   <meta name="description" content="NexTalk — защищённый веб-мессенджер со сквозным шифрованием (E2EE) и децентрализованной сетью независимых узлов передачи сообщений.">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,22 +13,21 @@
   <!-- NAV -->
   <nav class="nav" id="mainNav">
     <a href="index.html" class="nav-logo">
-      <div class="logo-icon">💬</div>
+      <div class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16"> <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/> </svg></div>
       <span>Nex<em>Talk</em></span>
     </a>
 
-    <button class="nav-burger" id="navBurger" aria-label="Меню">☰</button>
+    <button class="nav-burger" id="navBurger" aria-label="Меню"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/> </svg></button>
 
     <div class="nav-links" id="navLinks">
       <a href="#features" class="nav-link">Возможности</a>
       <a href="#how" class="nav-link">Архитектура</a>
-      <a href="#crypto-lab" class="nav-link">Лаборатория E2E</a>
       <a href="#comparison" class="nav-link">Сравнение</a>
       <a href="nodes.html" class="nav-link">Каталог узлов</a>
       <a href="install.html" class="nav-link">Установка узла</a>
       <a href="#faq" class="nav-link">FAQ</a>
       <a href="rules.html" class="nav-link">Правила</a>
-      <button class="theme-toggle" id="themeToggle" title="Переключить тему">🌙</button>
+      <button class="theme-toggle" id="themeToggle" title="Переключить тему"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill" viewBox="0 0 16 16"> <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/> <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/> </svg></button>
       <a href="../login.php" class="btn btn-ghost" style="margin-left: 6px;">Войти</a>
       <a href="../register.php" class="btn btn-primary">Регистрация</a>
     </div>
@@ -38,7 +38,7 @@
   <!-- HERO -->
   <header class="hero">
     <div class="hero-badge">
-      🔒 End-to-end шифрование · Открытый протокол · Без номеров телефонов
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16"> <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/> </svg> End-to-end шифрование · Открытый протокол · Без номеров телефонов
     </div>
     <h1>
       Мессенджер, где<br>
@@ -53,10 +53,10 @@
         Начать бесплатно →
       </a>
       <a href="install.html" class="btn btn-ghost btn-lg">
-        🚀 Установить свой узел
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rocket-takeoff-fill" viewBox="0 0 16 16"> <path d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.6 3.6 0 0 0-.108-.563 2 2 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2 2 0 0 0-.16-.045 4 4 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.55 2.55 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361s.437 1.732-.36 2.531Z"/> <path d="M5.205 10.787a7.6 7.6 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925"/> </svg> Установить свой узел
       </a>
       <a href="nodes.html" class="btn btn-ghost btn-lg">
-        🌐 Каталог узлов
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe2" viewBox="0 0 16 16"> <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855q-.215.403-.395.872c.705.157 1.472.257 2.282.287zM4.249 3.539q.214-.577.481-1.078a7 7 0 0 1 .597-.933A7 7 0 0 0 3.051 3.05q.544.277 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9 9 0 0 1-1.565-.667A6.96 6.96 0 0 0 1.018 7.5zm1.4-2.741a12.3 12.3 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.3 12.3 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.6 13.6 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696q.18.469.395.872c.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a7 7 0 0 1-.598-.933 9 9 0 0 1-.481-1.079 8.4 8.4 0 0 0-1.198.49 7 7 0 0 0 2.276 1.522zm-1.383-2.964A13.4 13.4 0 0 1 3.508 8.5h-2.49a6.96 6.96 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667m6.728 2.964a7 7 0 0 0 2.275-1.521 8.4 8.4 0 0 0-1.197-.49 9 9 0 0 1-.481 1.078 7 7 0 0 1-.597.933M8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855q.216-.403.395-.872A12.6 12.6 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.96 6.96 0 0 0 14.982 8.5h-2.49a13.4 13.4 0 0 1-.437 3.008M14.982 7.5a6.96 6.96 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461q.266.502.482 1.078a8.4 8.4 0 0 0 1.196-.49 7 7 0 0 0-2.275-1.52c.218.283.418.597.597.932m-.488 1.343a8 8 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"/> </svg> Каталог узлов
       </a>
     </div>
 
@@ -71,23 +71,8 @@
             <span class="mockup-dot red"></span>
             <span class="mockup-dot yellow"></span>
             <span class="mockup-dot green"></span>
-            <span class="mockup-window-title">💬 NexTalk Web · E2EE Secure Session</span>
+            <span class="mockup-window-title"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16"> <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/> </svg> NexTalk Web · E2EE Secure Session</span>
           </div>
-
-          <!-- View Switcher -->
-          <div class="mockup-view-toggle">
-            <button class="mockup-toggle-btn active" id="btnViewClient" title="Как видит переписку человек">
-              🔒 Вид клиента (E2EE)
-            </button>
-            <button class="mockup-toggle-btn" id="btnViewNode" title="Как видит передачу узел сети">
-              👁️ Вид узла (Шифротекст)
-            </button>
-          </div>
-        </div>
-
-        <!-- Alert banner when in Node View -->
-        <div class="mockup-banner-alert">
-          🛡️ <strong>Режим узла передачи:</strong> Сервер видит исключительно криптографический шифротекст, IV и тег подлинности. Исходный текст сообщений недоступен операторам узлов.
         </div>
 
         <!-- Window Body -->
@@ -104,7 +89,7 @@
               </div>
               <div class="mockup-chat-info">
                 <div class="mockup-chat-name">Алиса Воронова</div>
-                <div class="mockup-chat-preview">🔐 Ключи E2EE согласованы</div>
+                <div class="mockup-chat-preview"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-lock-fill" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5"/> </svg> Ключи E2EE согласованы</div>
               </div>
             </div>
 
@@ -141,11 +126,11 @@
                 </div>
                 <div>
                   <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Алиса Воронова</div>
-                  <div style="font-size: 11px; color: var(--success);">● в сети · печатает...</div>
+                  <div style="font-size: 11px; color: var(--success);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"> <circle cx="8" cy="8" r="8"/> </svg> в сети · печатает...</div>
                 </div>
               </div>
               <div class="mockup-sec-badge">
-                <span>🔐</span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-lock-fill" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5"/> </svg></span>
                 <span>Web Crypto AES-GCM + RSA-4096</span>
               </div>
             </div>
@@ -153,7 +138,7 @@
             <!-- Messages List -->
             <div class="mockup-messages">
               <div class="mockup-system-bubble">
-                🔒 Сообщения защищены сквозным E2E-шифрованием. Приватные ключи хранятся только в IndexedDB вашего браузера.
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16"> <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/> </svg> Сообщения защищены сквозным E2E-шифрованием. Приватные ключи хранятся только в IndexedDB вашего браузера.
               </div>
 
               <!-- Message 1: Incoming -->
@@ -162,14 +147,7 @@
                   <div class="mockup-text-normal">
                     Привет! Ты уже подключился через наш независимый федеративный узел?
                   </div>
-                  <div class="mockup-raw-box">
-                    {<br>
-                    &nbsp;&nbsp;"iv": "8f1a2c90e3d4",<br>
-                    &nbsp;&nbsp;"payload": "U2FsdGVkX187A9q4vX...8FmN2==", <br>
-                    &nbsp;&nbsp;"auth_tag": "e4a1b023f98c"<br>
-                    }
-                  </div>
-                  <div class="mockup-msg-meta">15:20 · E2EE ✓</div>
+                  <div class="mockup-msg-meta">15:20 · E2EE <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16"> <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/> </svg></div>
                 </div>
               </div>
 
@@ -177,16 +155,9 @@
               <div class="mockup-msg outgoing">
                 <div class="mockup-bubble">
                   <div class="mockup-text-normal">
-                    Да, поднял свой узел на VPS за пару минут! Пинг всего 14 мс, и хостинг не имеет доступа к переписке 👍
+                    Да, поднял свой узел на VPS за пару минут! Пинг всего 14 мс, и хостинг не имеет доступа к переписке
                   </div>
-                  <div class="mockup-raw-box">
-                    {<br>
-                    &nbsp;&nbsp;"iv": "3d9e0b1f7c8a",<br>
-                    &nbsp;&nbsp;"payload": "mQ7zP1o+wNx9RkLm2Yv8AaBb3==", <br>
-                    &nbsp;&nbsp;"auth_tag": "a8c2d140e67b"<br>
-                    }
-                  </div>
-                  <div class="mockup-msg-meta">15:21 · Доставлено ✓✓</div>
+                  <div class="mockup-msg-meta">15:21 · Доставлено <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16"> <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0"/> <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708"/> </svg></div>
                 </div>
               </div>
 
@@ -194,16 +165,9 @@
               <div class="mockup-msg incoming">
                 <div class="mockup-bubble">
                   <div class="mockup-text-normal">
-                    Супер! Никакой привязки к корпоративным серверам и номерам телефонов 🎉
+                    Супер! Никакой привязки к корпоративным серверам и номерам телефонов
                   </div>
-                  <div class="mockup-raw-box">
-                    {<br>
-                    &nbsp;&nbsp;"iv": "5c2d8e0a1b9f",<br>
-                    &nbsp;&nbsp;"payload": "kL8wX2o+zNm1QkPr3Tz9BbCc4==", <br>
-                    &nbsp;&nbsp;"auth_tag": "b9d3e251f89a"<br>
-                    }
-                  </div>
-                  <div class="mockup-msg-meta">15:22 · E2EE ✓</div>
+                  <div class="mockup-msg-meta">15:22 · E2EE <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16"> <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/> </svg></div>
                 </div>
               </div>
             </div>
@@ -211,9 +175,9 @@
             <!-- Fake input bar -->
             <div class="mockup-input-bar">
               <div class="mockup-fake-input">
-                🔒 Зашифрованное сообщение для Алисы...
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16"> <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/> </svg> Зашифрованное сообщение для Алисы...
               </div>
-              <div class="mockup-send-btn">➤</div>
+              <div class="mockup-send-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16"> <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z"/> </svg></div>
             </div>
 
           </div>
@@ -272,7 +236,7 @@
             <td><code class="code-tag">wss://nextalk-dev.loca.lt</code></td>
             <td><strong>142</strong> <span style="font-size:12px;color:var(--text-muted)">польз.</span></td>
             <td><span class="ping-badge" data-url="https://nextalk-dev.loca.lt">online</span></td>
-            <td><span class="badge-status badge-active">● Онлайн</span></td>
+            <td><span class="badge-status badge-active"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"> <circle cx="8" cy="8" r="8"/> </svg> Онлайн</span></td>
           </tr>
           <tr class="node-row" data-search="local-node локальный ws://127.0.0.1:3001" data-status="active">
             <td>
@@ -282,7 +246,7 @@
             <td><code class="code-tag">ws://127.0.0.1:3001</code></td>
             <td><strong>18</strong> <span style="font-size:12px;color:var(--text-muted)">польз.</span></td>
             <td><span class="ping-badge" data-url="http://127.0.0.1:3001">online</span></td>
-            <td><span class="badge-status badge-active">● Онлайн</span></td>
+            <td><span class="badge-status badge-active"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"> <circle cx="8" cy="8" r="8"/> </svg> Онлайн</span></td>
           </tr>
           <tr class="node-row" data-search="campus-hub университет wss://campus.nextalk.net" data-status="pending">
             <td>
@@ -292,7 +256,7 @@
             <td><code class="code-tag">wss://campus.nextalk.net</code></td>
             <td><strong>35</strong> <span style="font-size:12px;color:var(--text-muted)">польз.</span></td>
             <td><span class="ping-badge" data-url="https://campus.nextalk.net">тест</span></td>
-            <td><span class="badge-status badge-pending">○ На проверке</span></td>
+            <td><span class="badge-status badge-pending"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16"> <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/> </svg> На проверке</span></td>
           </tr>
         </tbody>
       </table>
@@ -315,37 +279,37 @@
 
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon">🔐</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-lock-fill" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5"/> </svg></div>
         <h3>E2E-шифрование</h3>
         <p>Сообщения шифруются прямо на вашем устройстве с помощью стандартов Web Crypto API. Ни серверы, ни операторы узлов не могут расшифровать содержимое.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">🌐</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-diagram-3-fill" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5z"/> </svg></div>
         <h3>Децентрализованные узлы</h3>
         <p>Сообщения передаются через независимые серверы-ноды. Любой участник может поднять свой узел — сбой одного узла не нарушает работу всей сети.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">⚡</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16"> <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/> </svg></div>
         <h3>Мгновенный WebSocket</h3>
         <p>Доставка в реальном времени через постоянные сокет-сессии. Онлайн-статусы, индикатор набора текста и мгновенные уведомления о сообщениях.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">🗝️</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16"> <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/> </svg></div>
         <h3>Ключи только у вас</h3>
         <p>Приватные криптографические ключи генерируются локально в браузере и безопасно сохраняются в IndexedDB устройства. Мы физически не имеем к ним доступа.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">📱</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16"> <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/> <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/> </svg></div>
         <h3>Работает на любом устройстве</h3>
         <p>Чистый веб-клиент без установки тяжёлых приложений. Адаптивный интерфейс одинаково удобен на смартфонах, планшетах и компьютерах.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">📨</div>
+        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-arrow-up-fill" viewBox="0 0 16 16"> <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zm.192 8.159 6.57-4.027L8 9.586l1.239-.757.367.225A4.49 4.49 0 0 0 8 12.5c0 .526.09 1.03.256 1.5H2a2 2 0 0 1-1.808-1.144M16 4.697v4.974A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-1.965.45l-.338-.207z"/> <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.354 1.25 1.25a.5.5 0 0 1-.708.708L13 12.207V14a.5.5 0 0 1-1 0v-1.717l-.28.305a.5.5 0 0 1-.737-.676l1.149-1.25a.5.5 0 0 1 .722-.016"/> </svg></div>
         <h3>Офлайн-доставка</h3>
         <p>Если собеседник временно не в сети, узел сохраняет зашифрованный контейнер и безопасно доставляет его в момент появления адресата онлайн.</p>
       </div>
@@ -387,75 +351,6 @@
     </div>
   </section>
 
-  <!-- LIVE CRYPTO PLAYGROUND SIMULATOR -->
-  <section class="section" id="crypto-lab">
-    <div class="section-label">Интерактивная демонстрация</div>
-    <h2 class="section-title">Криптографическая лаборатория</h2>
-    <p class="section-desc">
-      Попробуйте сквозное шифрование прямо сейчас. Введите любой текст и посмотрите, как браузер шифрует его перед отправкой в сеть.
-    </p>
-
-    <div class="crypto-playground-card">
-      <div class="crypto-input-wrap">
-        <label for="cryptoInput" style="font-size: 13px; font-weight: 600; color: var(--text-primary);">
-          Введите тестовое сообщение для проверки:
-        </label>
-        <div class="crypto-input-bar">
-          <input
-            type="text"
-            id="cryptoInput"
-            value="Привет! Это секретное сообщение для демонстрации E2EE шифрования."
-            placeholder="Напишите любую фразу..."
-          >
-        </div>
-        <div class="crypto-presets">
-          <span>Быстрые примеры:</span>
-          <button type="button" class="crypto-preset-pill">Встречаемся в 18:00 у метро</button>
-          <button type="button" class="crypto-preset-pill">Пароль от сервера: &amp;k9#xP!2026</button>
-          <button type="button" class="crypto-preset-pill">Договор подписан обеими сторонами</button>
-        </div>
-      </div>
-
-      <div class="crypto-stages-grid">
-        
-        <!-- Stage 1 -->
-        <div class="crypto-stage-box highlight">
-          <div class="stage-header">
-            <span>💻</span>
-            <span>Клиент А (Отправитель)</span>
-            <span class="stage-badge">Шифрование</span>
-          </div>
-          <pre class="stage-code-box" id="cryptoStage1">// Локальное шифрование...</pre>
-        </div>
-
-        <div class="crypto-arrow-connector">➔</div>
-
-        <!-- Stage 2 -->
-        <div class="crypto-stage-box stage-node">
-          <div class="stage-header">
-            <span>🌐</span>
-            <span>Узел передачи (WebSocket)</span>
-            <span class="stage-badge" style="background: rgba(74, 222, 128, 0.15); color: var(--success);">Zero-Knowledge</span>
-          </div>
-          <pre class="stage-code-box" id="cryptoStage2">// Передаваемый шифротекст...</pre>
-        </div>
-
-        <div class="crypto-arrow-connector">➔</div>
-
-        <!-- Stage 3 -->
-        <div class="crypto-stage-box highlight">
-          <div class="stage-header">
-            <span>📱</span>
-            <span>Клиент Б (Получатель)</span>
-            <span class="stage-badge" style="background: rgba(96, 165, 250, 0.15); color: var(--info);">Расшифровка</span>
-          </div>
-          <pre class="stage-code-box" id="cryptoStage3">// Результат у получателя...</pre>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- COMPARISON TABLE -->
   <section class="section" id="comparison">
     <div class="section-label">Безопасность и независимость</div>
@@ -469,7 +364,7 @@
         <thead>
           <tr>
             <th style="width: 32%;">Критерий защиты</th>
-            <th class="col-nextalk" style="width: 20%;">💬 NexTalk</th>
+            <th class="col-nextalk" style="width: 20%;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16"> <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/> </svg> NexTalk</th>
             <th style="width: 16%;">Telegram</th>
             <th style="width: 16%;">Signal</th>
             <th style="width: 16%;">WhatsApp</th>
@@ -478,45 +373,45 @@
         <tbody>
           <tr>
             <td>E2E-шифрование по умолчанию для всех чатов</td>
-            <td class="col-nextalk"><span class="check-yes">✅ Всегда</span></td>
-            <td><span class="check-no">❌ Только Secret</span></td>
-            <td><span class="check-yes">✅ Всегда</span></td>
-            <td><span class="check-yes">✅ Да (закрытый код)</span></td>
+            <td class="col-nextalk"><span class="check-yes"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/> </svg> Всегда</span></td>
+            <td><span class="check-no"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/> </svg> Только Secret</span></td>
+            <td><span class="check-yes"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/> </svg> Всегда</span></td>
+            <td><span class="check-yes"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/> </svg> Да (закрытый код)</span></td>
           </tr>
           <tr>
             <td>Независимые серверы (Свой узел передачи)</td>
-            <td class="col-nextalk"><span class="check-yes">✅ Да (Любой VPS/ПК)</span></td>
-            <td><span class="check-no">❌ Нет</span></td>
-            <td><span class="check-no">❌ Нет</span></td>
-            <td><span class="check-no">❌ Нет</span></td>
+            <td class="col-nextalk"><span class="check-yes"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/> </svg> Да (Любой VPS/ПК)</span></td>
+            <td><span class="check-no"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/> </svg> Нет</span></td>
+            <td><span class="check-no"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/> </svg> Нет</span></td>
+            <td><span class="check-no"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/> </svg> Нет</span></td>
           </tr>
           <tr>
             <td>Регистрация без номера телефона</td>
-            <td class="col-nextalk"><span class="check-yes">✅ Да (100% анонимно)</span></td>
-            <td><span class="check-no">❌ Требует номер</span></td>
-            <td><span class="check-no">❌ Требует номер</span></td>
-            <td><span class="check-no">❌ Требует номер</span></td>
+            <td class="col-nextalk"><span class="check-yes"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/> </svg> Да (100% анонимно)</span></td>
+            <td><span class="check-no"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/> </svg> Требует номер</span></td>
+            <td><span class="check-no"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/> </svg> Требует номер</span></td>
+            <td><span class="check-no"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/> </svg> Требует номер</span></td>
           </tr>
           <tr>
             <td>Открытый исходный код без трекеров</td>
-            <td class="col-nextalk"><span class="check-yes">✅ 0 трекеров</span></td>
-            <td><span class="check-partial">⚠️ Частично</span></td>
-            <td><span class="check-partial">⚠️ Клиент открыт</span></td>
-            <td><span class="check-no">❌ Полностью закрыт</span></td>
+            <td class="col-nextalk"><span class="check-yes"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/> </svg> 0 трекеров</span></td>
+            <td><span class="check-partial"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16"> <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/> </svg> Частично</span></td>
+            <td><span class="check-partial"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16"> <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/> </svg> Клиент открыт</span></td>
+            <td><span class="check-no"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/> </svg> Полностью закрыт</span></td>
           </tr>
           <tr>
             <td>Работа прямо в браузере без установки</td>
-            <td class="col-nextalk"><span class="check-yes">✅ Чистый веб-клиент</span></td>
-            <td><span class="check-yes">✅ Есть</span></td>
-            <td><span class="check-no">❌ Только приложение</span></td>
-            <td><span class="check-yes">✅ Web-версия</span></td>
+            <td class="col-nextalk"><span class="check-yes"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/> </svg> Чистый веб-клиент</span></td>
+            <td><span class="check-yes"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/> </svg> Есть</span></td>
+            <td><span class="check-no"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/> </svg> Только приложение</span></td>
+            <td><span class="check-yes"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/> </svg> Web-версия</span></td>
           </tr>
           <tr>
             <td>Защита от централизованной блокировки</td>
-            <td class="col-nextalk"><span class="check-yes">✅ Федеративная сеть</span></td>
-            <td><span class="check-no">❌ Единая точка отказа</span></td>
-            <td><span class="check-no">❌ Единая точка отказа</span></td>
-            <td><span class="check-no">❌ Единая точка отказа</span></td>
+            <td class="col-nextalk"><span class="check-yes"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/> </svg> Федеративная сеть</span></td>
+            <td><span class="check-no"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/> </svg> Единая точка отказа</span></td>
+            <td><span class="check-no"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/> </svg> Единая точка отказа</span></td>
+            <td><span class="check-no"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/> </svg> Единая точка отказа</span></td>
           </tr>
         </tbody>
       </table>
@@ -590,12 +485,12 @@
   <div class="section">
     <div class="node-banner" id="nodes-banner">
       <div class="node-banner-text">
-        <h2>🚀 Запустите свой собственный узел</h2>
+        <h2><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rocket-takeoff-fill" viewBox="0 0 16 16"> <path d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.6 3.6 0 0 0-.108-.563 2 2 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2 2 0 0 0-.16-.045 4 4 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.55 2.55 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361s.437 1.732-.36 2.531Z"/> <path d="M5.205 10.787a7.6 7.6 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925"/> </svg> Запустите свой собственный узел</h2>
         <p>
           Станьте частью распределённой сети NexTalk! Запустить узел передачи можно на домашнем ПК, сервере или облачном VPS всего за 3 команды. Не требуется база данных MySQL — всё работает на ультрабыстром Node.js и встроенной SQLite.
         </p>
         <a href="install.html" class="btn btn-primary">
-          📖 Полная инструкция и форма заявки →
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16"> <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/> </svg> Полная инструкция и форма заявки →
         </a>
       </div>
 
@@ -622,7 +517,7 @@
           Зарегистрироваться бесплатно →
         </a>
         <a href="install.html" class="btn btn-ghost btn-lg">
-          🚀 Развернуть свой узел
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rocket-takeoff-fill" viewBox="0 0 16 16"> <path d="M12.17 9.53c2.307-2.592 3.278-4.684 3.641-6.218.21-.887.214-1.58.16-2.065a3.6 3.6 0 0 0-.108-.563 2 2 0 0 0-.078-.23V.453c-.073-.164-.168-.234-.352-.295a2 2 0 0 0-.16-.045 4 4 0 0 0-.57-.093c-.49-.044-1.19-.03-2.08.188-1.536.374-3.618 1.343-6.161 3.604l-2.4.238h-.006a2.55 2.55 0 0 0-1.524.734L.15 7.17a.512.512 0 0 0 .433.868l1.896-.271c.28-.04.592.013.955.132.232.076.437.16.655.248l.203.083c.196.816.66 1.58 1.275 2.195.613.614 1.376 1.08 2.191 1.277l.082.202c.089.218.173.424.249.657.118.363.172.676.132.956l-.271 1.9a.512.512 0 0 0 .867.433l2.382-2.386c.41-.41.668-.949.732-1.526zm.11-3.699c-.797.8-1.93.961-2.528.362-.598-.6-.436-1.733.361-2.532.798-.799 1.93-.96 2.528-.361s.437 1.732-.36 2.531Z"/> <path d="M5.205 10.787a7.6 7.6 0 0 0 1.804 1.352c-1.118 1.007-4.929 2.028-5.054 1.903-.126-.127.737-4.189 1.839-5.18.346.69.837 1.35 1.411 1.925"/> </svg> Развернуть свой узел
         </a>
       </div>
     </div>
@@ -632,7 +527,7 @@
   <footer>
     <div class="footer-inner">
       <div class="nav-logo">
-        <div class="logo-icon" style="width:30px;height:30px;font-size:15px;border-radius:8px">💬</div>
+        <div class="logo-icon" style="width:30px;height:30px;border-radius:8px"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16"> <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/> </svg></div>
         <span>Nex<em>Talk</em></span>
       </div>
       <p>© 2026 NexTalk. Децентрализованный веб-мессенджер с открытым протоколом.</p>
