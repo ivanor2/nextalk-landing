@@ -7,11 +7,9 @@
 // Если вы загружаете этот лэндинг на отдельный домен или хостинг,
 // укажите здесь прямой URL вашего сервера с мессенджером:
 window.NEXTALK_CONFIG = {
-  // Например: 'https://chat.yourdomain.com' или относительный путь:
   appUrl: '../index.php',
   loginUrl: '../login.php',
   registerUrl: '../register.php',
-  // URL сервера авторизации для онлайн-проверок (опционально):
   authApiUrl: 'http://localhost:3000'
 };
 
@@ -81,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── 4. Smooth Anchor Scrolling ───────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
       const target = document.querySelector(targetId);
@@ -142,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const wsUrl = btn.dataset.ws || '';
       localStorage.setItem('nt-node', wsUrl);
-      
+
       const modal = document.getElementById('connectModal');
       const modalWsInput = document.getElementById('modalWsInput');
       if (modal && modalWsInput) {
@@ -282,15 +280,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const b64Cipher = bufToBase64(cipherBuffer);
         const tagHex = bufToHex(cipherBuffer.slice(-16));
 
-        stage1Code.textContent = 
-`// Клиент А (Ваш браузер)
+        stage1Code.textContent =
+          `// Клиент А (Ваш браузер)
 const plain = "${text.replace(/"/g, '\\"')}";
 const key = "AES-GCM-256 (IndexedDB)";
 const iv = "0x${ivHex.slice(0, 16)}...";
 Status: Зашифровано Web Crypto API ✓`;
 
-        stage2Code.textContent = 
-`// Передача через Узел сети (Zero-Knowledge)
+        stage2Code.textContent =
+          `// Передача через Узел сети (Zero-Knowledge)
 {
   "type": "msg",
   "iv": "${ivHex.slice(0, 12)}...",
@@ -299,8 +297,8 @@ Status: Зашифровано Web Crypto API ✓`;
 }
 // Узел видит ТОЛЬКО случайные байты`;
 
-        stage3Code.textContent = 
-`// Клиент Б (Собеседник)
+        stage3Code.textContent =
+          `// Клиент Б (Собеседник)
 const decrypted = "${text.replace(/"/g, '\\"')}";
 const verified = true;
 Status: E2E Аутентификация успешна ✓
@@ -356,7 +354,7 @@ Status: E2E Аутентификация успешна ✓
 });
 
 // ── Helper: Copy to Clipboard ──────────────────────────────
-window.copyCode = function(btn) {
+window.copyCode = function (btn) {
   const codeEl = btn.parentElement.querySelector('code');
   if (!codeEl) return;
   const text = codeEl.textContent;
@@ -377,7 +375,7 @@ window.copyCode = function(btn) {
 };
 
 // ── Helper: Copy WebSocket Address ─────────────────────────
-window.copyWsUrl = function() {
+window.copyWsUrl = function () {
   const input = document.getElementById('modalWsInput');
   if (input) {
     input.select();
@@ -387,7 +385,7 @@ window.copyWsUrl = function() {
 };
 
 // ── Helper: Toast Notifications ────────────────────────────
-window.showToast = function(message, type = 'info') {
+window.showToast = function (message, type = 'info') {
   let container = document.getElementById('toasts');
   if (!container) {
     container = document.createElement('div');
