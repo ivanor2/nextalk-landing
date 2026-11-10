@@ -2,7 +2,8 @@
    NexTalk Landing & Portal — Standalone Design System
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* Шрифты подключаются через <link rel="preconnect"> + <link rel="stylesheet"> в HTML.
+   @import здесь удалён: он блокировал рендеринг, так как загружался ПОСЛЕ парсинга этого CSS-файла. */
 
 /* === CSS Variables — Design Tokens === */
 :root {
@@ -1935,5 +1936,24 @@ footer p {
   .data-table th, .data-table td {
     padding: 10px 12px;
     font-size: 13px;
+  }
+}
+
+/* ── Inline Bootstrap SVG icons (replaced icon font) ─────── */
+svg.bi {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: -.125em;
+  flex-shrink: 0;
+}
+
+/* === Accessibility: уважение к prefers-reduced-motion === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
