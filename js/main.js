@@ -306,3 +306,24 @@ window.showToast = function (message, type = 'info') {
     setTimeout(() => toast.remove(), 300);
   }, 3500);
 };
+
+  // ── 8. Hero Mockup Tabs (Live Screenshot vs Interactive Demo) ──
+  const tabScreenshot = document.getElementById('tabScreenshot');
+  const tabInteractive = document.getElementById('tabInteractive');
+  const mockupScreenshotView = document.getElementById('mockupScreenshotView');
+  const mockupInteractiveView = document.getElementById('mockupInteractiveView');
+
+  if (tabScreenshot && tabInteractive && mockupScreenshotView && mockupInteractiveView) {
+    tabScreenshot.addEventListener('click', () => {
+      tabScreenshot.classList.add('active');
+      tabInteractive.classList.remove('active');
+      mockupScreenshotView.style.display = 'block';
+      mockupInteractiveView.style.display = 'none';
+    });
+    tabInteractive.addEventListener('click', () => {
+      tabInteractive.classList.add('active');
+      tabScreenshot.classList.remove('active');
+      mockupScreenshotView.style.display = 'none';
+      mockupInteractiveView.style.display = 'block';
+    });
+  }

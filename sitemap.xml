@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Главная страница / Лендинг -->
+  <url>
+    <loc>https://landing/</loc>
+    <lastmod>2026-11-16T08:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://landing/img/chat-preview.png</image:loc>
+      <image:title>NexTalk — Защищённый веб-мессенджер с E2E-шифрованием</image:title>
+      <image:caption>Интерфейс децентрализованного мессенджера NexTalk</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://landing/img/hero-bg-network.jpg</image:loc>
+      <image:title>Федеративная сеть узлов NexTalk</image:title>
+    </image:image>
+  </url>
+
+  <!-- Каталог публичных узлов сети -->
+  <url>
+    <loc>https://landing/nodes.html</loc>
+    <lastmod>2026-11-16T08:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://landing/img/nodes-network.jpg</image:loc>
+      <image:title>Реестр независимых серверов передачи NexTalk</image:title>
+    </image:image>
+  </url>
+
+  <!-- Руководство по установке собственного узла -->
+  <url>
+    <loc>https://landing/install.html</loc>
+    <lastmod>2026-11-16T08:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Правила сервиса и политика конфиденциальности -->
+  <url>
+    <loc>https://landing/rules.html</loc>
+    <lastmod>2026-11-16T08:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+</urlset>
+

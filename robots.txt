@@ -1,0 +1,14 @@
+# robots.txt for NexTalk (https://landing/)
+User-agent: *
+Allow: /
+Disallow: /vendor/
+Disallow: /scratch/
+
+User-agent: Yandex
+Allow: /
+Clean-param: ref /
+Clean-param: from /
+
+Host: https://landing
+Sitemap: https://landing/sitemap.xml
+

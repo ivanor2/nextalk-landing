@@ -6,15 +6,118 @@
   <meta name="yandex-verification" content="73b838837e399013" />
   <meta name="google-site-verification" content="NJfBLMl6MGPQ3KSFb_nHegOLUIZUjt-tCGlzlTqjELw" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NexTalk — Децентрализованный мессенджер с E2E-шифрованием</title>
+  <title>NexTalk — Децентрализованный защищённый веб-мессенджер со сквозным E2E-шифрованием</title>
   <meta name="description"
-    content="NexTalk — защищённый веб-мессенджер со сквозным шифрованием (E2EE) и децентрализованной сетью независимых узлов передачи сообщений.">
-  <!-- SEO / Social -->
+  content="NexTalk — свободный децентрализованный веб-мессенджер со сквозным E2EE-шифрованием (Web Crypto API).
+  Безопасный анонимный чат без номеров телефонов, слежки и единой точки отказа.">
+  <meta name="keywords"
+    content="децентрализованный мессенджер, сквозное шифрование, e2ee мессенджер, e2e чат, безопасный мессенджер, web crypto api, анонимный чат, приватные сообщения, p2p мессенджер, федеративная сеть узлов, мессенджер без номера телефона, node js messenger, websocket чат">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://landing/">
+  <meta name="author" content="NexTalk Community">
+  <meta name="theme-color" content="#6C63FF">
+  <meta name="application-name" content="NexTalk">
+
+  <!-- SEO / Open Graph -->
+  <meta property="og:site_name" content="NexTalk">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="NexTalk — Децентрализованный мессенджер с E2E-шифрованием">
+  <meta property="og:title" content="NexTalk — Децентрализованный веб-мессенджер со сквозным E2E-шифрованием">
   <meta property="og:description"
-    content="NexTalk — защищённый веб-мессенджер со сквозным шифрованием (E2EE) и децентрализованной сетью независимых узлов передачи сообщений.">
+  content="Безопасный веб-мессенджер со сквозным шифрованием (Web Crypto) и независимыми федеративными узлами. Ваши
+  ключи всегда остаются только на вашем устройстве.">
+  <meta property="og:image" content="https://landing/img/chat-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="Интерфейс мессенджера NexTalk со сквозным шифрованием">
+  <meta property="og:url" content="https://landing/">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NexTalk — Децентрализованный веб-мессенджер со сквозным E2E-шифрованием">
+  <meta name="twitter:description"
+    content="Безопасный веб-мессенджер со сквозным шифрованием (Web Crypto) и независимыми узлами передачи.">
+  <meta name="twitter:image" content="https://landing/img/chat-preview.png">
+
+  <!-- JSON-LD Structured Data for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://landing/#app",
+        "name": "NexTalk",
+        "url": "https://landing/",
+        "description": "Децентрализованный защищённый веб-мессенджер со сквозным E2E-шифрованием на базе Web Crypto API и распределённой сети узлов.",
+        "applicationCategory": "CommunicationApplication",
+        "operatingSystem": "All, Web Browser",
+        "browserRequirements": "Requires JavaScript. Requires HTML5 and Web Crypto API support.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Сквозное E2E-шифрование сообщений (Web Crypto API)",
+          "Децентрализованные независимые узлы передачи",
+          "Мгновенный обмен сообщениями через WebSocket",
+          "Локальное хранение приватных ключей в IndexedDB",
+          "Работа в браузере на смартфонах и ПК без установки",
+          "Офлайн-доставка зашифрованных контейнеров",
+          "Регистрация без номера телефона"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://landing/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Как работает сквозное шифрование (E2EE) прямо в браузере?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "При регистрации браузер генерирует криптографическую пару ключей (публичный и закрытый) с помощью встроенного стандарта Web Crypto API. Секретный закрытый ключ сохраняется в локальной зашифрованной базе IndexedDB и никогда не покидает ваше устройство. Перед отправкой каждое сообщение шифруется публичным ключом адресата — расшифровать его может только устройство собеседника."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Может ли владелец узла передачи прочитать мои сообщения?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Узел передачи сообщений работает по принципу Zero-Knowledge (нулевого разглашения). Он получает только зашифрованный блок байтов (шифротекст) и метаданные доставки. Расшифровать этот блок без приватного ключа получателя математически невозможно даже при полном контроле над сервером узла."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужен ли номер телефона для регистрации?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Номер телефона не требуется. Регистрация происходит по уникальному логину, паролю и контактному e-mail (для восстановления доступа). Мы принципиально не привязываем аккаунты к телефонным номерам или паспортным данным."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что произойдёт, если узел, к которому я подключён, отключится?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Благодаря децентрализации сети вы можете в любой момент зайти в «Настройки» мессенджера или в каталог узлов и переключиться на любой другой активный узел сети всего в один клик. Ваша учётная запись, контакты и ключи шифрования останутся в полной сохранности."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сложно ли поднять свой собственный узел передачи?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Очень просто! Серверная часть узла написана на легковесном Node.js и SQLite, не требует сложных баз данных или настроек. Достаточно выполнить команды git clone и npm start на недорогом VPS или домашнем ПК."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>%F0%9F%92%AC</text></svg>">
   <!-- Performance: early font connections -->
@@ -42,11 +145,11 @@
           d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
       </svg></button>
     <div class="nav-links" id="navLinks"><a href="#features" class="nav-link">Возможности</a><a href="#how"
-        class="nav-link">Архитектура</a><a href="#comparison" class="nav-link">Сравнение</a><a href="nodes.html"
-        class="nav-link">Каталог узлов</a><a href="install.html" class="nav-link">Установка узла</a><a href="#faq"
-        class="nav-link">FAQ</a><a href="rules.html" class="nav-link">Правила</a><button class="theme-toggle"
-        id="themeToggle" title="Переключить тему"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-          fill="currentColor" class="bi bi-moon-stars-fill" viewBox="0 0 16 16">
+        class="nav-link">Сравнение</a><a href="nodes.html" class="nav-link">Каталог узлов</a><a href="install.html"
+        class="nav-link">Установка узла</a><a href="#faq" class="nav-link">FAQ</a><a href="rules.html"
+        class="nav-link">Правила</a><button class="theme-toggle" id="themeToggle" title="Переключить тему"><svg
+          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill"
+          viewBox="0 0 16 16">
           <path
             d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
           <path
@@ -84,8 +187,27 @@
           <path
             d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855q-.215.403-.395.872c.705.157 1.472.257 2.282.287zM4.249 3.539q.214-.577.481-1.078a7 7 0 0 1 .597-.933A7 7 0 0 0 3.051 3.05q.544.277 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9 9 0 0 1-1.565-.667A6.96 6.96 0 0 0 1.018 7.5zm1.4-2.741a12.3 12.3 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.3 12.3 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.6 13.6 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696q.18.469.395.872c.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a7 7 0 0 1-.598-.933 9 9 0 0 1-.481-1.079 8.4 8.4 0 0 0-1.198.49 7 7 0 0 0 2.276 1.522zm-1.383-2.964A13.4 13.4 0 0 1 3.508 8.5h-2.49a6.96 6.96 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667m6.728 2.964a7 7 0 0 0 2.275-1.521 8.4 8.4 0 0 0-1.197-.49 9 9 0 0 1-.481 1.078 7 7 0 0 1-.597.933M8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855q.216-.403.395-.872A12.6 12.6 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.96 6.96 0 0 0 14.982 8.5h-2.49a13.4 13.4 0 0 1-.437 3.008M14.982 7.5a6.96 6.96 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461q.266.502.482 1.078a8.4 8.4 0 0 0 1.196-.49 7 7 0 0 0-2.275-1.52c.218.283.418.597.597.932m-.488 1.343a8 8 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z" />
         </svg> Каталог узлов
-      </a></div><!-- INTERACTIVE PRODUCT MOCKUP -->
+      </a></div><!-- INTERACTIVE PRODUCT MOCKUP & LIVE CHAT SHOWCASE -->
     <div class="hero-mockup-container">
+      <div class="mockup-tabs">
+        <button class="mockup-tab-btn active" id="tabScreenshot" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-camera-fill"
+            viewBox="0 0 16 16">
+            <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+            <path
+              d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 7.172 2H4.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 1.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0" />
+          </svg>
+          Живая переписка (Скриншот из веб-клиента)
+        </button>
+        <button class="mockup-tab-btn" id="tabInteractive" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-cpu"
+            viewBox="0 0 16 16">
+            <path
+              d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14A2.5 2.5 0 0 1 11.5 14v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0m-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z" />
+          </svg>
+          Интерактивный симулятор E2EE
+        </button>
+      </div>
       <div class="hero-mockup-glow"></div>
       <div class="mockup-window" id="heroMockup"><!-- Window Titlebar -->
         <div class="mockup-titlebar">
@@ -94,124 +216,141 @@
                 width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
                 <path
                   d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
-              </svg> NexTalk Web · E2EE Secure Session</span></div>
-        </div><!-- Window Body -->
-        <div class="mockup-body"><!-- Mockup Sidebar -->
-          <div class="mockup-sidebar">
-            <div class="mockup-sidebar-header">Активные диалоги</div>
-            <div class="mockup-chat-item active">
-              <div class="mockup-avatar">
-                АВ
-                <span class="status-dot"></span>
-              </div>
-              <div class="mockup-chat-info">
-                <div class="mockup-chat-name">Алиса Воронова</div>
-                <div class="mockup-chat-preview"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                      d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5" />
-                  </svg> Ключи E2EE согласованы</div>
-              </div>
-            </div>
-            <div class="mockup-chat-item">
-              <div class="mockup-avatar" style="background: linear-gradient(135deg, #10B981, #059669);">
-                МР
-                <span class="status-dot"></span>
-              </div>
-              <div class="mockup-chat-info">
-                <div class="mockup-chat-name">Марк (Узел Node-1)</div>
-                <div class="mockup-chat-preview">Узел онлайн на порту 3001</div>
-              </div>
-            </div>
-            <div class="mockup-chat-item">
-              <div class="mockup-avatar" style="background: linear-gradient(135deg, #F59E0B, #D97706);">
-                #
-              </div>
-              <div class="mockup-chat-info">
-                <div class="mockup-chat-name">Федерация #dev</div>
-                <div class="mockup-chat-preview">38 участников онлайн</div>
-              </div>
-            </div>
-          </div><!-- Mockup Main Chat -->
-          <div class="mockup-chat-main">
-            <div class="mockup-chat-header">
-              <div class="mockup-chat-contact-info">
-                <div class="mockup-avatar" style="width: 32px; height: 32px; font-size: 12px;">
-                  АВ
+              </svg> NexTalk Web · E2EE Secure Session (Елена Новикова &amp; Александр Морозов)</span></div>
+        </div>
+
+        <!-- View 1: Real Chat Screenshot -->
+        <div id="mockupScreenshotView" class="showcase-screen-wrap">
+          <img src="img/chat-preview.png" alt="Скриншот реального чата NexTalk со сквозным шифрованием"
+            class="showcase-screen-img" width="1200" height="675" decoding="async" />
+          <div class="showcase-badge-overlay">
+            <span class="showcase-badge-pill">🔒 Сквозное E2E-шифрование</span>
+            <span class="showcase-badge-pill">⚡ Пинг 12 ms</span>
+            <span class="showcase-badge-pill">🌐 Узел: localhost:3001</span>
+            <span class="showcase-badge-pill">👥 Собеседники: Елена Новикова &amp; Александр Морозов</span>
+          </div>
+        </div>
+
+        <!-- View 2: Interactive Simulation -->
+        <div id="mockupInteractiveView" style="display: none;"><!-- Window Body -->
+          <div class="mockup-body"><!-- Mockup Sidebar -->
+            <div class="mockup-sidebar">
+              <div class="mockup-sidebar-header">Активные диалоги</div>
+              <div class="mockup-chat-item active">
+                <div class="mockup-avatar">
+                  <img src="img/avatar-alexander.jpg" alt="Александр Морозов" class="mockup-avatar-img">
                   <span class="status-dot"></span>
                 </div>
-                <div>
-                  <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Алиса Воронова</div>
-                  <div style="font-size: 11px; color: var(--success);"><svg xmlns="http://www.w3.org/2000/svg"
-                      width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
-                      <circle cx="8" cy="8" r="8" />
-                    </svg> в сети · печатает...</div>
+                <div class="mockup-chat-info">
+                  <div class="mockup-chat-name">Александр Морозов</div>
+                  <div class="mockup-chat-preview"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5" />
+                    </svg> Ключи E2EE согласованы</div>
                 </div>
               </div>
-              <div class="mockup-sec-badge"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                    fill="currentColor" class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                      d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5" />
-                  </svg></span><span>Web Crypto AES-GCM + RSA-4096</span></div>
-            </div><!-- Messages List -->
-            <div class="mockup-messages">
-              <div class="mockup-system-bubble"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                  fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2" />
-                </svg> Сообщения защищены сквозным E2E-шифрованием. Приватные ключи хранятся только в IndexedDB вашего
-                браузера.
-              </div><!-- Message 1: Incoming -->
-              <div class="mockup-msg incoming">
-                <div class="mockup-bubble">
-                  <div class="mockup-text-normal">
-                    Привет! Ты уже подключился через наш независимый федеративный узел?
-                  </div>
-                  <div class="mockup-msg-meta">15:20 · E2EE <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                      height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-                      <path
-                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
-                    </svg></div>
+              <div class="mockup-chat-item">
+                <div class="mockup-avatar">
+                  <img src="img/avatar-mark.jpg" alt="Марк" class="mockup-avatar-img">
+                  <span class="status-dot"></span>
                 </div>
-              </div><!-- Message 2: Outgoing -->
-              <div class="mockup-msg outgoing">
-                <div class="mockup-bubble">
-                  <div class="mockup-text-normal">
-                    Да, поднял свой узел на VPS за пару минут! Пинг всего 14 мс, и хостинг не имеет доступа к переписке
-                  </div>
-                  <div class="mockup-msg-meta">15:21 · Доставлено <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                      height="16" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16">
-                      <path
-                        d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0" />
-                      <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708" />
-                    </svg></div>
-                </div>
-              </div><!-- Message 3: Incoming -->
-              <div class="mockup-msg incoming">
-                <div class="mockup-bubble">
-                  <div class="mockup-text-normal">
-                    Супер! Никакой привязки к корпоративным серверам и номерам телефонов
-                  </div>
-                  <div class="mockup-msg-meta">15:22 · E2EE <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                      height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-                      <path
-                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
-                    </svg></div>
+                <div class="mockup-chat-info">
+                  <div class="mockup-chat-name">Марк (Узел Node-1)</div>
+                  <div class="mockup-chat-preview">Узел онлайн на порту 3001</div>
                 </div>
               </div>
-            </div><!-- Fake input bar -->
-            <div class="mockup-input-bar">
-              <div class="mockup-fake-input"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                  fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2" />
-                </svg> Зашифрованное сообщение для Алисы...
+              <div class="mockup-chat-item">
+                <div class="mockup-avatar" style="background: linear-gradient(135deg, #F59E0B, #D97706);">
+                  #
+                </div>
+                <div class="mockup-chat-info">
+                  <div class="mockup-chat-name">Федерация #dev</div>
+                  <div class="mockup-chat-preview">38 участников онлайн</div>
+                </div>
               </div>
-              <div class="mockup-send-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                  fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z" />
-                </svg></div>
+            </div><!-- Mockup Main Chat -->
+            <div class="mockup-chat-main">
+              <div class="mockup-chat-header">
+                <div class="mockup-chat-contact-info">
+                  <div class="mockup-avatar" style="width: 32px; height: 32px; font-size: 12px;">
+                    <img src="img/avatar-alexander.jpg" alt="Александр Морозов" class="mockup-avatar-img">
+                    <span class="status-dot"></span>
+                  </div>
+                  <div>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--text-primary);">Александр Морозов</div>
+                    <div style="font-size: 11px; color: var(--success);"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                        <circle cx="8" cy="8" r="8" />
+                      </svg> в сети · печатает...</div>
+                  </div>
+                </div>
+                <div class="mockup-sec-badge"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                        d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5" />
+                    </svg></span><span>Web Crypto AES-GCM + RSA-4096</span></div>
+              </div><!-- Messages List -->
+              <div class="mockup-messages">
+                <div class="mockup-system-bubble"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2" />
+                  </svg> Сообщения защищены сквозным E2E-шифрованием. Приватные ключи хранятся только в IndexedDB вашего
+                  браузера.
+                </div><!-- Message 1: Incoming -->
+                <div class="mockup-msg incoming">
+                  <div class="mockup-bubble">
+                    <div class="mockup-text-normal">
+                      Привет! Ты уже подключился через наш независимый федеративный узел?
+                    </div>
+                    <div class="mockup-msg-meta">15:20 · E2EE <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                        <path
+                          d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                      </svg></div>
+                  </div>
+                </div><!-- Message 2: Outgoing -->
+                <div class="mockup-msg outgoing">
+                  <div class="mockup-bubble">
+                    <div class="mockup-text-normal">
+                      Да, поднял свой узел на VPS за пару минут! Пинг всего 14 мс, и хостинг не имеет доступа к
+                      переписке
+                    </div>
+                    <div class="mockup-msg-meta">15:21 · Доставлено <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-check2-all" viewBox="0 0 16 16">
+                        <path
+                          d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0" />
+                        <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708" />
+                      </svg></div>
+                  </div>
+                </div><!-- Message 3: Incoming -->
+                <div class="mockup-msg incoming">
+                  <div class="mockup-bubble">
+                    <div class="mockup-text-normal">
+                      Супер! Никакой привязки к корпоративным серверам и номерам телефонов
+                    </div>
+                    <div class="mockup-msg-meta">15:22 · E2EE <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                        <path
+                          d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                      </svg></div>
+                  </div>
+                </div>
+              </div><!-- Fake input bar -->
+              <div class="mockup-input-bar">
+                <div class="mockup-fake-input"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2" />
+                  </svg> Зашифрованное сообщение для Алисы...
+                </div>
+                <div class="mockup-send-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z" />
+                  </svg></div>
+              </div>
             </div>
           </div>
         </div>
@@ -308,6 +447,8 @@
     </p>
     <div class="features-grid">
       <div class="feature-card">
+        <img src="img/security-shield.jpg" alt="E2E-шифрование сообщений Web Crypto API" class="feature-card-img"
+          width="800" height="450" loading="lazy" decoding="async" />
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
             <path fill-rule="evenodd"
@@ -318,6 +459,8 @@
           узлов не могут расшифровать содержимое.</p>
       </div>
       <div class="feature-card">
+        <img src="img/nodes-network.jpg" alt="Децентрализованная сеть узлов передачи данных" class="feature-card-img"
+          width="800" height="450" loading="lazy" decoding="async" />
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-diagram-3-fill" viewBox="0 0 16 16">
             <path fill-rule="evenodd"
@@ -328,6 +471,8 @@
           узла не нарушает работу всей сети.</p>
       </div>
       <div class="feature-card">
+        <img src="img/instant-delivery.jpg" alt="Мгновенный обмен через сокеты WebSocket" class="feature-card-img"
+          width="800" height="450" loading="lazy" decoding="async" />
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
             <path
@@ -338,6 +483,8 @@
           мгновенные уведомления о сообщениях.</p>
       </div>
       <div class="feature-card">
+        <img src="img/crypto-keys.jpg" alt="Локальные криптографические ключи в защищённом хранилище IndexedDB"
+          class="feature-card-img" width="800" height="450" loading="lazy" decoding="async" />
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-key-fill" viewBox="0 0 16 16">
             <path
@@ -348,6 +495,8 @@
           устройства. Мы физически не имеем к ним доступа.</p>
       </div>
       <div class="feature-card">
+        <img src="img/devices-workspace.jpg" alt="Кроссплатформенный адаптивный веб-интерфейс" class="feature-card-img"
+          width="800" height="450" loading="lazy" decoding="async" />
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-phone" viewBox="0 0 16 16">
             <path
@@ -359,6 +508,8 @@
           планшетах и компьютерах.</p>
       </div>
       <div class="feature-card">
+        <img src="img/offline-delivery.jpg" alt="Офлайн-доставка зашифрованных контейнеров сообщений"
+          class="feature-card-img" width="800" height="450" loading="lazy" decoding="async" />
         <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-envelope-arrow-up-fill" viewBox="0 0 16 16">
             <path

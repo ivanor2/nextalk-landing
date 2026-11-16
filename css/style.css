@@ -352,8 +352,37 @@ code, pre {
   z-index: 1;
   padding: 80px 24px 70px;
   text-align: center;
-  max-width: 960px;
+  max-width: 1040px;
   margin: 0 auto;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  max-height: 820px;
+  background-image: 
+    radial-gradient(ellipse 70% 55% at 50% 20%, rgba(13, 14, 20, 0.68) 0%, rgba(13, 14, 20, 0.94) 75%, var(--bg-base) 100%),
+    url('../img/hero-bg-network.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.55;
+  z-index: -1;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+}
+
+[data-theme="light"] .hero::after {
+  background-image: 
+    radial-gradient(ellipse 70% 55% at 50% 20%, rgba(244, 245, 251, 0.80) 0%, rgba(244, 245, 251, 0.96) 75%, var(--bg-base) 100%),
+    url('../img/hero-bg-network.jpg');
+  opacity: 0.30;
 }
 
 .hero-badge {
@@ -565,7 +594,9 @@ code, pre {
 .node-banner {
   position: relative;
   z-index: 1;
-  background: var(--glass-bg);
+  background: 
+    linear-gradient(135deg, rgba(19, 20, 29, 0.90) 0%, rgba(26, 27, 46, 0.92) 100%),
+    url('../img/nodes-network.jpg') center/cover no-repeat;
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--glass-border);
@@ -1824,7 +1855,9 @@ footer p {
    FINAL CTA CARD
    ============================================================ */
 .cta-card {
-  background: linear-gradient(135deg, rgba(108, 99, 255, 0.25) 0%, rgba(26, 27, 46, 0.85) 100%);
+  background: 
+    linear-gradient(135deg, rgba(19, 20, 29, 0.88) 0%, rgba(26, 27, 46, 0.92) 100%),
+    url('../img/hero-bg-network.jpg') center/cover no-repeat;
   border: 1px solid rgba(108, 99, 255, 0.35);
   border-radius: var(--radius-xl);
   padding: 60px 32px;
@@ -1957,3 +1990,156 @@ svg.bi {
     scroll-behavior: auto !important;
   }
 }
+
+/* ============================================================
+   SHOWCASE, FEATURE IMAGES & TESTIMONIALS ENHANCEMENTS
+   ============================================================ */
+
+.feature-card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  border: 1px solid var(--glass-border);
+  transition: transform var(--t-base);
+}
+
+.feature-card:hover .feature-card-img {
+  transform: scale(1.03);
+}
+
+.mockup-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.mockup-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mockup-tab-btn {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border: 1px solid var(--glass-border);
+  transition: all var(--t-fast);
+}
+
+.mockup-tab-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+}
+
+.mockup-tab-btn.active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent-light);
+  box-shadow: 0 0 16px rgba(108, 99, 255, 0.4);
+}
+
+.showcase-screen-wrap {
+  width: 100%;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  overflow: hidden;
+  background: #0D0E14;
+}
+
+.showcase-screen-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  transition: opacity var(--t-base);
+}
+
+.showcase-badge-overlay {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 20px;
+  background: rgba(19, 20, 29, 0.95);
+  border-top: 1px solid var(--glass-border);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.showcase-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--accent-dim);
+  border: 1px solid rgba(108, 99, 255, 0.3);
+  border-radius: var(--radius-full);
+  color: var(--accent-light);
+  font-weight: 500;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.testimonial-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all var(--t-base);
+}
+
+.testimonial-card:hover {
+  border-color: rgba(108, 99, 255, 0.45);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+.testimonial-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.testimonial-role {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.testimonial-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-style: italic;
+}
+
